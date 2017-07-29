@@ -1,0 +1,14 @@
+{
+  "generator-angular-library": {
+    "githubUsername": "TekVanDo",
+    "githubRepoName": "ngx-permission",
+    "npmModuleName": "ngx-permission",
+    "moduleGlobal": "ngxPermission",
+    "ngModuleName": "NgxPermissionModule",
+    "selectorPrefix": "ngx",
+    "projectTitle": "ngx permission",
+    "projectDescription": "",
+    "authorName": "Alexander Strochkov",
+    "packageManager": "npm"
+  }
+}

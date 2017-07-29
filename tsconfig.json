@@ -13,7 +13,6 @@
   "include": [
     "src",
     "test",
-    "demo",
     "custom-typings.d.ts"
   ],
   "exclude": [

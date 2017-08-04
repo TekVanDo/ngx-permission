@@ -5,10 +5,9 @@ import { Role } from '../../types/role.type';
 export class RoleStoreService {
   private roleStore: { [name: string]: Role } = {};
 
-  constructor() {
-  }
+  constructor() {}
 
-  defineRole(role: Role) {
+  defineRole(role: Role): void {
     if (this.roleStore[role.name]) {
       // todo add error list
       throw new Error('Role already defined');
@@ -16,8 +15,8 @@ export class RoleStoreService {
     this.roleStore[role.name] = role;
   }
 
-  defineManyRoles(roles: Role []): void {
-    roles.forEach((role) => this.defineRole(role));
+  defineManyRoles(roles: Role[]): void {
+    roles.forEach(role => this.defineRole(role));
   }
 
   removeRoleDefinition(roleName: string): void {

@@ -38,8 +38,21 @@
     "url": "git+https://github.com/TekVanDo/ngx-permission.git"
   },
   "keywords": [
+    "angular",
+    "ngx",
+    "ng2",
+    "ng",
     "angular2",
-    "angular"
+    "angular 2",
+    "angular4",
+    "angular 4",
+    "access-control",
+    "permissions",
+    "access",
+    "acl",
+    "rbac",
+    "roles",
+    "route"
   ],
   "author": "Alexander Strochkov",
   "license": "MIT",
@@ -110,7 +123,8 @@
     "zone.js": "^0.8.4"
   },
   "peerDependencies": {
-    "@angular/core": ">=2.0.0 <5.0.0"
+    "@angular/core": ">=2.0.0 <5.0.0",
+    "@angular/router": "^4.0.0"
   },
   "config": {
     "commitizen": {

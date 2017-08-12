@@ -1,6 +1,6 @@
 {
   "name": "ngx-permission",
-  "version": "0.5.0",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/username/repo"
@@ -10,7 +10,21 @@
     "email": "tek@inbox.ru"
   },
   "keywords": [
-    "angular"
+    "angular",
+    "ngx",
+    "ng2",
+    "ng",
+    "angular2",
+    "angular 2",
+    "angular4",
+    "angular 4",
+    "access-control",
+    "permissions",
+    "access",
+    "acl",
+    "rbac",
+    "roles",
+    "route"
   ],
   "license": "MIT",
   "bugs": {

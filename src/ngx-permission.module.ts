@@ -17,7 +17,6 @@ import { ExceptRolesDirective } from './directives/except-roles/except-roles.dir
     RolePermissionsService,
   ],
   exports: [
-    RoleStoreService,
     OnlyForRolesDirective,
     ExceptRolesDirective
   ]

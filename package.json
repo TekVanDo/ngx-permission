@@ -65,6 +65,7 @@
     "@angular/compiler": "^4.0.0",
     "@angular/compiler-cli": "^4.0.0",
     "@angular/core": "^4.0.0",
+    "@angular/router": "^4.0.0",
     "@angular/language-service": "^4.0.0",
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
@@ -123,8 +124,7 @@
     "zone.js": "^0.8.4"
   },
   "peerDependencies": {
-    "@angular/core": ">=2.0.0 <5.0.0",
-    "@angular/router": "^4.0.0"
+    "@angular/core": ">=2.0.0 <5.0.0"
   },
   "config": {
     "commitizen": {

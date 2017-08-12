@@ -7,7 +7,7 @@ export class RolePermissionsService {
   constructor(private roleStore: RoleStoreService) {
   }
 
-  private checkValidationFunction(roles: string []) {
+  private checkValidationFunction(roles: string []): Array<Promise<boolean>> {
     return roles.map((role) => {
       if (this.roleStore.hasRoleDefinition(role)) {
         const roleDefinition = this.roleStore.getRoleDefinition(role);
@@ -17,17 +17,17 @@ export class RolePermissionsService {
     });
   }
 
-  onlyForRoles(roles: string []) {
+  onlyForRoles(roles: string []): Promise<boolean> {
     const rolesValidation = this.checkValidationFunction(roles);
     return Promise.all(rolesValidation).then((rolePromisesData) => {
-      return rolePromisesData.find((rolePromise) => rolePromise === true);
+      return rolePromisesData.find((rolePromise) => rolePromise === true) || false;
     }).catch(() => false);
   }
 
-  exceptRoles(roles: string []) {
+  exceptRoles(roles: string []): Promise<boolean> {
     const rolesValidation = this.checkValidationFunction(roles);
     return Promise.all(rolesValidation).then((rolePromisesData) => {
-      return !rolePromisesData.find((rolePromise) => rolePromise);
+      return !rolePromisesData.find((rolePromise) => rolePromise) || false;
     });
   }
 }

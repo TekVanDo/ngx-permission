@@ -11,7 +11,8 @@ import { RouterNgxPermissions } from '../../types/router-ngx-permissions.type';
 @Injectable()
 export class RouterConnector implements CanActivate {
 
-  constructor(private roleService: RolePermissionsService, private router: Router) {}
+  constructor(private roleService: RolePermissionsService, private router: Router) {
+  }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
     const permissions = route.data['ngxPermissions'] as RouterNgxPermissions;

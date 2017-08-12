@@ -6,13 +6,11 @@ import { Role } from '../../types/role.type';
 describe('RoleStoreService', () => {
   const baseRole: Role = {
     name: 'test',
-    validationFunction: () => true,
-    priority: 1
+    validationFunction: () => true
   };
   const secondRole: Role = {
     name: 'test2',
-    validationFunction: () => true,
-    priority: 2
+    validationFunction: () => true
   };
 
   beforeEach(() => {

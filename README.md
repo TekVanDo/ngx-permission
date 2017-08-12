@@ -50,13 +50,11 @@ export class AppComponent {
   constructor(roleStoreService:RoleStoreService) {
     const adminRole: Role = {
       name: 'admin',
-      validationFunction: () => false,
-      priority: 1
+      validationFunction: () => false
     };
     const userRole: Role = {
       name: 'user',
-      validationFunction: () => true,
-      priority: 1
+      validationFunction: () => true //boolean or Promise<boolean>
     };
   
     roleStoreService.defineRole(adminRole);
@@ -118,9 +116,12 @@ All documentation is auto-generated from the source via [compodoc](https://compo
 https://TekVanDo.github.io/ngx-permission/docs/
 
 ## Roadmap
+ * implements forRoot and forChild functions
+ * add support for observables 
+ * implements permissions 
  * improve documentation
  * better tests coverage
- * implements permissions 
+ * nested roles
 
 ## Development
 

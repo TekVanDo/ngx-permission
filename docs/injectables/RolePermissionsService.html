@@ -140,6 +140,9 @@
                                 <li class="link">
                                     <a href="../injectables/RoleStoreService.html" >RoleStoreService</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../injectables/RouterConnector.html" >RouterConnector</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -157,10 +160,29 @@
                                 <li class="link">
                                     <a href="../interfaces/Role.html" >Role</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../interfaces/RouterNgxPermissions.html" >RouterNgxPermissions</a>
+                                </li>
                         </ul>
                     </li>
             
             
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
+                    </li>
             
             
             
@@ -301,6 +323,9 @@
                                        <li class="link">
                                            <a href="../injectables/RoleStoreService.html" >RoleStoreService</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="../injectables/RouterConnector.html" >RouterConnector</a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -318,10 +343,29 @@
                                        <li class="link">
                                            <a href="../interfaces/Role.html" >Role</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="../interfaces/RouterNgxPermissions.html" >RouterNgxPermissions</a>
+                                       </li>
                                </ul>
                            </li>
                    
                    
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                    
                    
@@ -370,6 +414,32 @@
         </p>
 
 
+
+            <section>
+                <h3 id="index">Index</h3>
+                <table class="table table-sm table-bordered index-table">
+                    <tbody>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>Methods</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                         <a href="#exceptRoles">exceptRoles</a>
+                                    </li>
+                                    <li>
+                                         <a href="#onlyForRoles">onlyForRoles</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
             <section>
                 <h3 id="constructor">Constructor</h3>
                     <table class="table table-sm table-bordered">
@@ -398,43 +468,13 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> onlyForRoles</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>onlyForRoles(roles: [])</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/services/role-permissions/role-permissions.service.ts:20</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code>void</code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
+                                    <a name="exceptRoles"></a>
                                     <b> exceptRoles</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>exceptRoles(roles: [])</code>
+            <code>exceptRoles(roles: string[])</code>
                                 </td>
                             </tr>
             
@@ -449,7 +489,39 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
-                                            <b>Returns : </b>    <code>void</code>
+                                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="onlyForRoles"></a>
+                                    <b> onlyForRoles</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>onlyForRoles(roles: string[])</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/services/role-permissions/role-permissions.service.ts:20</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
             
                                         </div>
                                 </td>
@@ -471,7 +543,7 @@ export class RolePermissionsService {
   constructor(private roleStore: RoleStoreService) {
   }
 
-  private checkValidationFunction(roles: string []) {
+  private checkValidationFunction(roles: string []): Array&lt;Promise&lt;boolean&gt;&gt; {
     return roles.map((role) &#x3D;&gt; {
       if (this.roleStore.hasRoleDefinition(role)) {
         const roleDefinition &#x3D; this.roleStore.getRoleDefinition(role);
@@ -481,17 +553,17 @@ export class RolePermissionsService {
     });
   }
 
-  onlyForRoles(roles: string []) {
+  onlyForRoles(roles: string []): Promise&lt;boolean&gt; {
     const rolesValidation &#x3D; this.checkValidationFunction(roles);
     return Promise.all(rolesValidation).then((rolePromisesData) &#x3D;&gt; {
-      return rolePromisesData.find((rolePromise) &#x3D;&gt; rolePromise &#x3D;&#x3D;&#x3D; true);
+      return rolePromisesData.find((rolePromise) &#x3D;&gt; rolePromise &#x3D;&#x3D;&#x3D; true) || false;
     }).catch(() &#x3D;&gt; false);
   }
 
-  exceptRoles(roles: string []) {
+  exceptRoles(roles: string []): Promise&lt;boolean&gt; {
     const rolesValidation &#x3D; this.checkValidationFunction(roles);
     return Promise.all(rolesValidation).then((rolePromisesData) &#x3D;&gt; {
-      return !rolePromisesData.find((rolePromise) &#x3D;&gt; rolePromise);
+      return !rolePromisesData.find((rolePromise) &#x3D;&gt; rolePromise) || false;
     });
   }
 }

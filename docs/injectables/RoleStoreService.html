@@ -140,6 +140,9 @@
                                 <li class="link">
                                     <a href="../injectables/RoleStoreService.html"  data-type="entity-link" class="active" >RoleStoreService</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../injectables/RouterConnector.html" >RouterConnector</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -157,10 +160,29 @@
                                 <li class="link">
                                     <a href="../interfaces/Role.html" >Role</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../interfaces/RouterNgxPermissions.html" >RouterNgxPermissions</a>
+                                </li>
                         </ul>
                     </li>
             
             
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
+                    </li>
             
             
             
@@ -301,6 +323,9 @@
                                        <li class="link">
                                            <a href="../injectables/RoleStoreService.html"  data-type="entity-link" class="active" >RoleStoreService</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="../injectables/RouterConnector.html" >RouterConnector</a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -318,10 +343,29 @@
                                        <li class="link">
                                            <a href="../interfaces/Role.html" >Role</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="../interfaces/RouterNgxPermissions.html" >RouterNgxPermissions</a>
+                                       </li>
                                </ul>
                            </li>
                    
                    
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                    
                    
@@ -370,6 +414,47 @@
         </p>
 
 
+
+            <section>
+                <h3 id="index">Index</h3>
+                <table class="table table-sm table-bordered index-table">
+                    <tbody>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>Methods</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                         <a href="#clearStore">clearStore</a>
+                                    </li>
+                                    <li>
+                                         <a href="#defineManyRoles">defineManyRoles</a>
+                                    </li>
+                                    <li>
+                                         <a href="#defineRole">defineRole</a>
+                                    </li>
+                                    <li>
+                                         <a href="#getRoleDefinition">getRoleDefinition</a>
+                                    </li>
+                                    <li>
+                                         <a href="#getStore">getStore</a>
+                                    </li>
+                                    <li>
+                                         <a href="#hasRoleDefinition">hasRoleDefinition</a>
+                                    </li>
+                                    <li>
+                                         <a href="#removeRoleDefinition">removeRoleDefinition</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
             <section>
                 <h3 id="constructor">Constructor</h3>
                     <table class="table table-sm table-bordered">
@@ -398,19 +483,20 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> defineRole</b>
+                                    <a name="clearStore"></a>
+                                    <b> clearStore</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>defineRole(role: <a href="../interfaces/Role.html">Role</a>)</code>
+            <code>clearStore()</code>
                                 </td>
                             </tr>
             
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/services/role-store/role-store.service.ts:11</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/services/role-store/role-store.service.ts:38</a></div>
                                         </td>
                                     </tr>
             
@@ -418,7 +504,7 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
-                                            <b>Returns : </b>    <code>void</code>
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
                                 </td>
@@ -429,6 +515,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="defineManyRoles"></a>
                                     <b> defineManyRoles</b>
                                 </td>
                             </tr>
@@ -441,7 +528,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/services/role-store/role-store.service.ts:19</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/services/role-store/role-store.service.ts:18</a></div>
                                         </td>
                                     </tr>
             
@@ -449,7 +536,7 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
-                                            <b>Returns : </b>    <code>void</code>
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
                                 </td>
@@ -460,19 +547,20 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> removeRoleDefinition</b>
+                                    <a name="defineRole"></a>
+                                    <b> defineRole</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>removeRoleDefinition(roleName: string)</code>
+            <code>defineRole(role: <a href="../interfaces/Role.html">Role</a>)</code>
                                 </td>
                             </tr>
             
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/services/role-store/role-store.service.ts:23</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/services/role-store/role-store.service.ts:10</a></div>
                                         </td>
                                     </tr>
             
@@ -480,7 +568,7 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
-                                            <b>Returns : </b>    <code>void</code>
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
                                 </td>
@@ -491,50 +579,20 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> hasRoleDefinition</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>hasRoleDefinition(roleName: string)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/services/role-store/role-store.service.ts:27</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code>boolean</code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
+                                    <a name="getRoleDefinition"></a>
                                     <b> getRoleDefinition</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>getRoleDefinition(roleName: string)</code>
+            <code>getRoleDefinition(roleName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                                 </td>
                             </tr>
             
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/services/role-store/role-store.service.ts:31</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/services/role-store/role-store.service.ts:30</a></div>
                                         </td>
                                     </tr>
             
@@ -553,6 +611,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="getStore"></a>
                                     <b> getStore</b>
                                 </td>
                             </tr>
@@ -565,29 +624,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/services/role-store/role-store.service.ts:35</a></div>
-                                        </td>
-                                    </tr>
-            
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b> clearStore</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>clearStore()</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/services/role-store/role-store.service.ts:39</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/services/role-store/role-store.service.ts:34</a></div>
                                         </td>
                                     </tr>
             
@@ -595,7 +632,71 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
-                                            <b>Returns : </b>    <code>void</code>
+                                            <b>Returns : </b>    <code>literal type</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="hasRoleDefinition"></a>
+                                    <b> hasRoleDefinition</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>hasRoleDefinition(roleName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/services/role-store/role-store.service.ts:26</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="removeRoleDefinition"></a>
+                                    <b> removeRoleDefinition</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>removeRoleDefinition(roleName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/services/role-store/role-store.service.ts:22</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
                                 </td>
@@ -615,10 +716,9 @@ import { Role } from &#x27;../../types/role.type&#x27;;
 export class RoleStoreService {
   private roleStore: { [name: string]: Role } &#x3D; {};
 
-  constructor() {
-  }
+  constructor() {}
 
-  defineRole(role: Role) {
+  defineRole(role: Role): void {
     if (this.roleStore[role.name]) {
       // todo add error list
       throw new Error(&#x27;Role already defined&#x27;);
@@ -626,8 +726,8 @@ export class RoleStoreService {
     this.roleStore[role.name] &#x3D; role;
   }
 
-  defineManyRoles(roles: Role []): void {
-    roles.forEach((role) &#x3D;&gt; this.defineRole(role));
+  defineManyRoles(roles: Role[]): void {
+    roles.forEach(role &#x3D;&gt; this.defineRole(role));
   }
 
   removeRoleDefinition(roleName: string): void {

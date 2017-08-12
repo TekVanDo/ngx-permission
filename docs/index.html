@@ -140,6 +140,9 @@
                                 <li class="link">
                                     <a href="./injectables/RoleStoreService.html" >RoleStoreService</a>
                                 </li>
+                                <li class="link">
+                                    <a href="./injectables/RouterConnector.html" >RouterConnector</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -157,10 +160,29 @@
                                 <li class="link">
                                     <a href="./interfaces/Role.html" >Role</a>
                                 </li>
+                                <li class="link">
+                                    <a href="./interfaces/RouterNgxPermissions.html" >RouterNgxPermissions</a>
+                                </li>
                         </ul>
                     </li>
             
             
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
+                    </li>
             
             
             
@@ -301,6 +323,9 @@
                                        <li class="link">
                                            <a href="./injectables/RoleStoreService.html" >RoleStoreService</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="./injectables/RouterConnector.html" >RouterConnector</a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -318,10 +343,29 @@
                                        <li class="link">
                                            <a href="./interfaces/Role.html" >Role</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="./interfaces/RouterNgxPermissions.html" >RouterNgxPermissions</a>
+                                       </li>
                                </ul>
                            </li>
                    
                    
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                    
                    
@@ -347,17 +391,18 @@
 <a href="https://github.com/TekVanDo/ngx-permission/issues"><img src="https://img.shields.io/github/issues/TekVanDo/ngx-permission.svg" alt="GitHub issues" class="img-responsive"></a>
 <a href="https://github.com/TekVanDo/ngx-permission/stargazers"><img src="https://img.shields.io/github/stars/TekVanDo/ngx-permission.svg" alt="GitHub stars" class="img-responsive"></a>
 <a href="https://raw.githubusercontent.com/TekVanDo/ngx-permission/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license" class="img-responsive"></a></p>
-<h2 id="demo">Demo</h2>
-<p><a href="https://TekVanDo.github.io/ngx-permission/">https://TekVanDo.github.io/ngx-permission/</a></p>
 <h2 id="table-of-contents">Table of contents</h2>
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#installation">Installation</a></li>
+<li><a href="#router">Integration with router</a></li>
 <li><a href="#documentation">Documentation</a></li>
+<li><a href="#roadmap">Roadmap</a></li>
 <li><a href="#development">Development</a></li>
 <li><a href="#license">License</a></li>
 </ul>
 <h2 id="about">About</h2>
+<p>Angular 2 or Angular 4 implementation of <a href="https://github.com/Narzerus/angular-permission">angular-permission</a></p>
 <h2 id="installation">Installation</h2>
 <p>Install through npm:</p>
 <pre class="line-numbers"><code class="language-none">npm install --save ngx-permission</code></pre><p>Then include in your apps module:</p>
@@ -366,23 +411,71 @@ import { NgxPermissionModule } from &#39;ngx-permission&#39;;
 
 &#64;NgModule({
   imports: [
-    NgxPermissionModule.forRoot()
+    NgxPermissionModule
   ]
 })
-export class MyModule {}</code></pre><p>Finally use in one of your apps components:</p>
+export class MyModule {}</code></pre><p>Define role and role validation function by RoleStoreService</p>
+<pre class="line-numbers"><code class="language-typescript">export class AppComponent {
+  constructor(roleStoreService:RoleStoreService) {
+    const adminRole: Role = {
+      name: &#39;admin&#39;,
+      validationFunction: () =&gt; false
+    };
+    const userRole: Role = {
+      name: &#39;user&#39;,
+      validationFunction: () =&gt; true //boolean or Promise&lt;boolean&gt;
+    };
+
+    roleStoreService.defineRole(adminRole);
+    roleStoreService.defineRole(userRole);
+
+    // or roleStoreService.defineManyRoles([adminRole, userRole])
+  }
+}</code></pre><p>Now you can use onlyForRoles and exceptRoles directives in your components:</p>
 <pre class="line-numbers"><code class="language-typescript">import { Component } from &#39;&#64;angular/core&#39;;
 
 &#64;Component({
-  template: &#39;&lt;hello-world&gt;&lt;/hello-world&gt;&#39;
+  template: `&lt;div *onlyForRoles=&quot;[&#39;user&#39;]&quot;&gt;user can see this&lt;/div&gt;
+             &lt;div *onlyForRoles=&quot;[&#39;admin&#39;]&quot;&gt;user can&#39;t see this&lt;/div&gt;`
 })
-export class MyComponent {}</code></pre><p>You may also find it useful to view the <a href="https://github.com/TekVanDo/ngx-permission/blob/master/demo/demo.component.ts">demo source</a>.</p>
-<h3 id="usage-without-a-module-bundler">Usage without a module bundler</h3>
+export class MyComponent {}</code></pre><h2 id="router">Router</h2>
+<p>set canActivate property RouterConnector class </p>
+<pre class="line-numbers"><code class="language-none">{
+  path: &#39;about&#39;,
+  component: AboutComponent,
+  data: {
+    ngxPermissions: {
+      only: [&#39;user&#39;]
+    }
+  },
+  canActivate: [RouterConnector]
+},
+{
+  path: &#39;secret&#39;,
+  component: SectetDataComponent,
+  data: {
+    ngxPermissions: {
+      exept: [&#39;user&#39;],
+      redirectTo: &#39;about&#39;
+    }
+  },
+  canActivate: [RouterConnector]
+}</code></pre><h3 id="usage-without-a-module-bundler">Usage without a module bundler</h3>
 <pre class="line-numbers"><code class="language-none">&lt;script src=&quot;node_modules/ngx-permission/bundles/ngx-permission.umd.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
     // everything is exported ngxPermission namespace
 &lt;/script&gt;</code></pre><h2 id="documentation">Documentation</h2>
 <p>All documentation is auto-generated from the source via <a href="https://compodoc.github.io/compodoc/">compodoc</a> and can be viewed here:
 <a href="https://TekVanDo.github.io/ngx-permission/docs/">https://TekVanDo.github.io/ngx-permission/docs/</a></p>
+<h2 id="roadmap">Roadmap</h2>
+<ul>
+<li>implements forRoot and forChild functions</li>
+<li>add support for observables </li>
+<li>implements permissions </li>
+<li>improve documentation</li>
+<li>better tests coverage</li>
+<li>nested roles</li>
+</ul>
 <h2 id="development">Development</h2>
 <h3 id="prepare-your-environment">Prepare your environment</h3>
 <ul>

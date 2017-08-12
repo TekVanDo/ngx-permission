@@ -158,10 +158,10 @@
                                 id="xs-interfaces-links"
                             >
                                 <li class="link">
-                                    <a href="../interfaces/Role.html"  data-type="entity-link" class="active" >Role</a>
+                                    <a href="../interfaces/Role.html" >Role</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../interfaces/RouterNgxPermissions.html" >RouterNgxPermissions</a>
+                                    <a href="../interfaces/RouterNgxPermissions.html"  data-type="entity-link" class="active" >RouterNgxPermissions</a>
                                 </li>
                         </ul>
                     </li>
@@ -341,10 +341,10 @@
                                        id="interfaces-links"
                    >
                                        <li class="link">
-                                           <a href="../interfaces/Role.html"  data-type="entity-link" class="active" >Role</a>
+                                           <a href="../interfaces/Role.html" >Role</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../interfaces/RouterNgxPermissions.html" >RouterNgxPermissions</a>
+                                           <a href="../interfaces/RouterNgxPermissions.html"  data-type="entity-link" class="active" >RouterNgxPermissions</a>
                                        </li>
                                </ul>
                            </li>
@@ -393,7 +393,7 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>Role</li>
+  <li>RouterNgxPermissions</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -413,7 +413,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/types/role.type.ts</code>
+            <code>src/types/router-ngx-permissions.type.ts</code>
         </p>
 
 
@@ -430,10 +430,13 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#name">name</a>
+                                        <a href="#except">except</a>
                                 </li>
                                 <li>
-                                        <a href="#validationFunction">validationFunction</a>
+                                        <a href="#only">only</a>
+                                </li>
+                                <li>
+                                        <a href="#redirectTo">redirectTo</a>
                                 </li>
                             </ul>
                         </td>
@@ -450,13 +453,79 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="name"></a>
-                                        <b>name</b>
+                                        <a name="except"></a>
+                                        <b>except</b>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>name:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                        <code>except:     <code>string[]</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>string[]</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="3" class="link-to-prism">src/types/router-ngx-permissions.type.ts:3</a></div>
+                                        </td>
+                                    </tr>
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="only"></a>
+                                        <b>only</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>only:     <code>string[]</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>string[]</code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="2" class="link-to-prism">src/types/router-ngx-permissions.type.ts:2</a></div>
+                                        </td>
+                                    </tr>
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="redirectTo"></a>
+                                        <b>redirectTo</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>redirectTo:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -473,40 +542,7 @@
 
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="2" class="link-to-prism">src/types/role.type.ts:2</a></div>
-                                        </td>
-                                    </tr>
-
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="validationFunction"></a>
-                                        <b>validationFunction</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>validationFunction:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="3" class="link-to-prism">src/types/role.type.ts:3</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/types/router-ngx-permissions.type.ts:4</a></div>
                                         </td>
                                     </tr>
 
@@ -517,9 +553,10 @@
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">export interface Role {
-  name: string;
-  validationFunction: () &#x3D;&gt; boolean | Promise&lt;boolean&gt;;
+        <pre class="line-numbers"><code class="language-typescript">export interface RouterNgxPermissions {
+  only: string[];
+  except: string[];
+  redirectTo: string;
 }
 </code></pre>
     </div>

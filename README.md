@@ -7,20 +7,19 @@
 [![GitHub stars](https://img.shields.io/github/stars/TekVanDo/ngx-permission.svg)](https://github.com/TekVanDo/ngx-permission/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/TekVanDo/ngx-permission/master/LICENSE)
 
-## Demo
-https://TekVanDo.github.io/ngx-permission/
-
 ## Table of contents
 
 - [About](#about)
 - [Installation](#installation)
+- [Integration with router](#router)
 - [Documentation](#documentation)
+- [Roadmap](#roadmap)
 - [Development](#development)
 - [License](#license)
 
 ## About
 
-
+Angular 2 or Angular 4 implementation of [angular-permission](https://github.com/Narzerus/angular-permission)
 
 ## Installation
 
@@ -37,23 +36,74 @@ import { NgxPermissionModule } from 'ngx-permission';
 
 @NgModule({
   imports: [
-    NgxPermissionModule.forRoot()
+    NgxPermissionModule
   ]
 })
 export class MyModule {}
 ```
 
-Finally use in one of your apps components:
+
+Define role and role validation function by RoleStoreService
+
+```typescript
+export class AppComponent {
+  constructor(roleStoreService:RoleStoreService) {
+    const adminRole: Role = {
+      name: 'admin',
+      validationFunction: () => false,
+      priority: 1
+    };
+    const userRole: Role = {
+      name: 'user',
+      validationFunction: () => true,
+      priority: 1
+    };
+  
+    roleStoreService.defineRole(adminRole);
+    roleStoreService.defineRole(userRole);
+    
+    // or roleStoreService.defineManyRoles([adminRole, userRole])
+  }
+}
+```
+
+
+Now you can use onlyForRoles and exceptRoles directives in your components:
 ```typescript
 import { Component } from '@angular/core';
 
 @Component({
-  template: '<hello-world></hello-world>'
+  template: `<div *onlyForRoles="['user']">user can see this</div>
+             <div *onlyForRoles="['admin']">user can't see this</div>`
 })
 export class MyComponent {}
 ```
 
-You may also find it useful to view the [demo source](https://github.com/TekVanDo/ngx-permission/blob/master/demo/demo.component.ts).
+## Router
+set canActivate property RouterConnector class 
+```
+{
+  path: 'about',
+  component: AboutComponent,
+  data: {
+    ngxPermissions: {
+      only: ['user']
+    }
+  },
+  canActivate: [RouterConnector]
+},
+{
+  path: 'secret',
+  component: SectetDataComponent,
+  data: {
+    ngxPermissions: {
+      exept: ['user'],
+      redirectTo: 'about'
+    }
+  },
+  canActivate: [RouterConnector]
+}
+```
 
 ### Usage without a module bundler
 ```
@@ -66,6 +116,11 @@ You may also find it useful to view the [demo source](https://github.com/TekVanD
 ## Documentation
 All documentation is auto-generated from the source via [compodoc](https://compodoc.github.io/compodoc/) and can be viewed here:
 https://TekVanDo.github.io/ngx-permission/docs/
+
+## Roadmap
+ * improve documentation
+ * better tests coverage
+ * implements permissions 
 
 ## Development
 

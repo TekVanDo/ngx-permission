@@ -1,6 +1,6 @@
 {
   "name": "ngx-permission",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "./bundles/ngx-permission.umd.js",
   "module": "./index.js",
@@ -25,8 +25,7 @@
     "postrelease": "npm run build:clean && npm run gh-pages",
     "commitmsg": "validate-commit-msg",
     "codecov": "cat coverage/lcov.info | codecov",
-    "prettier": "prettier --single-quote --parser typescript --write",
-    "precommit": "lint-staged"
+    "prettier": "prettier --single-quote --parser typescript --write"
   },
   "lint-staged": {
     "{src,test}/**/*.ts": [
@@ -77,7 +76,6 @@
     "del-cli": "^1.0.0",
     "fork-ts-checker-webpack-plugin": "^0.2.2",
     "html-webpack-plugin": "^2.28.0",
-    "husky": "^0.14.3",
     "istanbul-instrumenter-loader": "^3.0.0-rc.1",
     "jasmine-core": "^2.7.0",
     "jasmine-spec-reporter": "^4.1.1",
@@ -90,7 +88,6 @@
     "karma-mocha-reporter": "^2.2.3",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.1",
-    "lint-staged": "^4.0.2",
     "mocha": "^3.3.0",
     "offline-plugin": "^4.8.3",
     "prettier": "^1.5.3",

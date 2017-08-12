@@ -1,5 +1,4 @@
 export interface Role {
   name: string;
-  validationFunction: Function;
-  priority: number;
+  validationFunction: () => boolean | Promise<boolean>;
 }

@@ -9,13 +9,11 @@ import { RolePermissionsService } from '../../services/role-permissions/role-per
 
 const baseRole: Role = {
   name: 'test',
-  validationFunction: () => true,
-  priority: 1
+  validationFunction: () => true
 };
 const secondRole: Role = {
   name: 'test2',
-  validationFunction: () => false,
-  priority: 2
+  validationFunction: () => false
 };
 
 @Component({ selector: 'ngx-test-cmp', template: '' })

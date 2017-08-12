@@ -4,12 +4,10 @@ import { RoleStoreService } from '../role-store/role-store.service';
 
 const mockRoles = [{
   name: 'test',
-  validationFunction: () => true,
-  priority: 1
+  validationFunction: () => true
 }, {
   name: 'test2',
-  validationFunction: () => false,
-  priority: 1
+  validationFunction: () => false
 }];
 
 describe('RolePermissionsService', () => {
